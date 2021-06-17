@@ -48,74 +48,8 @@ Akan Name Generator lets you know you true Ghanain name or as they say your Akan
   </label>
 </div>
 
-<button type="button" class="btn btn-primary btn-lg">GENERATE AKAN NAME</button>
-
-
-<script type="text/javascript">
-
-function calculate(){
-
-
-var dd= document.getElementById("dd").value;
-var mm= document.getElementById("mm").value;
-var cc= document.getElementById("cc").value;
-var yy= document.getElementById("yy").value;
-//var gender= document.getElementById("id-5").value;
-var maleAkanaNames=[" Kwasi", " Kwadwo", " Kwabena", " Kwaku", " Yaw", " kofi", " Kwame"]
-var femaleAkanaNames=[" akosua", " Adwoa", " Abenaa", " Akua", " Yaa", " Afua", " ama"]
-
-if(cc >= 19 && cc<= 20){
-
-let yourDayOfWeek = Math.round((((cc/4) -2*cc-1) + ((5*yy/4)) + ((26*(mm+1)/10)) + dd )%7)
-
-console.log(yourDayOfWeek)
-
-}
-
-}
-</script>
+<button type="button" onclick="showakan()"name="button">GENERATE AKAN NAME</button>
 
 
 
-
-
-
-
-<style media="screen">
-h1{
-  color: green;
-  text-align: center;
-  font-size: 50px;
-  font-style: italic;
-  font-weight: bold;
-  font-stretch: normal;
-  }
-h2{
- color: blue;
- font-size: 40px;
- font-style: italic;
- font-weight: bold;
-}
-body {
- background-color:lightblue;
-  opacity: 1.0;
-}
-p {    color:black;
- font-size: 30px;
- font-style: oblique;
-}
-h3{
- font-size: 20px;
- font-style: italic;
- color: blue;
-}
-h4{
- font-size: 20px;
- font-style: italic;
- color: blue;
-}
-h5{
-font-size: 20px;
-font-style: italic;
-color: blue;
-</style>
+<script scr="js/scripts.js"></script>
