@@ -27,29 +27,97 @@ Akan Name Generator lets you know you true Ghanain name or as they say your Akan
 
   <span class="input-group-text">DATE OF BIRTH</span>
 
-  <input type="number" aria-label="DD" class="form-control" placeholder="DD">
-  <input type="number" aria-label="MM" class="form-control"placeholder="MM">
-    <input type="number" aria-label="CC" class="form-control"placeholder="CC">
-      <input type="number" aria-label="YY" class="form-control"placeholder="YY">
+  <input type="number" aria-label="DD" class="form-control" placeholder="DD" id="DD">
+  <input type="number" aria-label="MM" class="form-control"placeholder="MM" id ="MM">
+    <input type="number" aria-label="CC" class="form-control"placeholder="CC"id="CC">
+      <input type="number" aria-label="YY" class="form-control"placeholder="YY"id="YY">
+
 
 </div>
 
-<h4>Choose Gender please</h4>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Male
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-  <label class="form-check-label" for="flexRadioDefault2">
-    Female
-  </label>
-</div>
+<label for="gender">Pick your Gender:</label>
+<select id="gender" name="gender">
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+ </select>
 
-<button type="button" onclick="issueSubmit()"name="button">GENERATE AKAN NAME</button>
+
+<button type="button" onclick="handleSubmit()"name="button">GENERATE AKAN NAME</button>
+<script type="text/javascript">
+function handleSubmit() {
 
 
 
-<script scr="js/scripts.js"></script>
+  let day = document.getElementById("DD").value;
+  let month = document.getElementById("MM").value;
+  let century = document.getElementById("CC").value;
+  let year = document.getElementById("YY").value;
+  let gender = document.getElementById("gender").value;
+
+
+
+
+  let DD = parseInt(day);
+  let MM = parseInt(month);
+  let CC = parseInt(century);
+  let YY = parseInt(year);
+
+
+  let dayOfTheWeek = Math.round((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7)
+
+
+  let maleAkanaNames = [" Kwasi", " Kwadwo", " Kwabena", " Kwaku", "  Yaw", " kofi", " Kwame"];
+  let femaleAkanaNames = [" Akosua", " Adwoa", " Abenaa", " Akua", " Yaa", " Afua", " Ama"];
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  let output;
+  if (gender == "male") {
+    output = "Your Akan Name is " + maleAkanaNames[dayOfTheWeek]
+  } else if (gender == "female") {
+    output = "Your Akan Name is" + femaleAkanaNames[dayOfTheWeek]
+  }
+
+  document.getElementById("output").innerHTML = output;
+}
+
+</script>
+<h4 id="output"></h4>
+
+<style media="screen">
+h1{
+  color: green;
+  text-align: center;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: bold;
+  font-stretch: normal;
+  }
+h2{
+ color: blue;
+ font-size: 40px;
+ font-style: italic;
+ font-weight: bold;
+}
+body {
+ background-color:lightblue;
+  opacity: 1.0;
+}
+p {    color:black;
+ font-size: 30px;
+ font-style: oblique;
+}
+h3{
+ font-size: 20px;
+ font-style: italic;
+ color: blue;
+}
+h4{
+ font-size: 20px;
+ font-style: italic;
+ color: blue;
+}
+h5{
+font-size: 20px;
+font-style: italic;
+color: blue;
+</style>
