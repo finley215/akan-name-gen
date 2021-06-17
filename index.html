@@ -43,19 +43,15 @@ Akan Name Generator lets you know you true Ghanain name or as they say your Akan
 
 
 <button type="button" onclick="handleSubmit()"name="button">GENERATE AKAN NAME</button>
+ 
 <script type="text/javascript">
 function handleSubmit() {
-
-
 
   let day = document.getElementById("DD").value;
   let month = document.getElementById("MM").value;
   let century = document.getElementById("CC").value;
   let year = document.getElementById("YY").value;
   let gender = document.getElementById("gender").value;
-
-
-
 
   let DD = parseInt(day);
   let MM = parseInt(month);
@@ -64,6 +60,7 @@ function handleSubmit() {
 
 
   let dayOfTheWeek = Math.round((((CC / 4) - 2 * CC - 1) + ((5 * YY / 4)) + ((26 * (MM + 1) / 10)) + DD) % 7)
+
 
 
   let maleAkanaNames = [" Kwasi", " Kwadwo", " Kwabena", " Kwaku", "  Yaw", " kofi", " Kwame"];
